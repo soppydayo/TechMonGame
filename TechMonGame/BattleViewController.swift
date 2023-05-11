@@ -17,6 +17,8 @@ class BattleViewController: UIViewController {
     @IBOutlet var enemyImageView: UIImageView!
     @IBOutlet var enemyHPBar: UIProgressView!
     
+    
+    
     var player: Player!
     var enemy: Enemy!
     
@@ -30,7 +32,8 @@ class BattleViewController: UIViewController {
         
         
         
-        player = Player(name: "ゆうしゃ", imageName: "yusya.png", attackPoint: 20, maxHP: 100)
+        
+        player = Player(name: "ゆうしゃ", imageName: "yusya.png", attackPoint: 20, fireAttackPoint: 70, maxHP: 100, maxTP: 100)
         enemy = Enemy(name: "ドラゴン", imageName: "monster.png", attackPoint: 10, maxHP: 300)
         
         
@@ -99,12 +102,44 @@ class BattleViewController: UIViewController {
         
         enemy.currentHP -= enemy.attackPoint
         
+        
+        player.currentTP += 5
+        if player.currentTP >= player.maxTP {
+            player.currentTP = player.maxTP
+        }
+        
         updateUI()
         
         if enemy.currentHP <= 0 {
             finishBattle(vanishImageView: enemyImageView, isPlayerWin: true)
+        }
+    }
+    
+    @IBAction func chargeAction() {
+        TechMonManager.playSE(fileName: "SE_charge")
+        
+        player.currentTP += 20
+        if player.currentTP >= player.maxTP {
+            player.currentTP = player.maxTP
+        }
+        
+        updateUI()
+    }
+    
+    @IBAction func fireAction() {
+        if player.currentTP >= player.maxTP {
+            TechMonManager.damageAnimation(imageView: enemyImageView)
+            TechMonManager.playSE(fileName: "SE_fire")
             
+            enemy.currentHP -= player.fireAttackPoint
             
+            player.currentTP = 0
+        }
+        
+        updateUI()
+        
+        if enemy.currentHP <= 0 {
+            finishBattle(vanishImageView: enemyImageView, isPlayerWin: true)
         }
     }
     
