@@ -174,7 +174,7 @@
                                         <rect key="frame" x="44" y="45" width="120" height="4"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </progressView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0 / 100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wlQ-jr-x4d">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wlQ-jr-x4d">
                                         <rect key="frame" x="44" y="68" width="120" height="20"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="MisakiGothic" family="MisakiGothic" pointSize="20"/>
@@ -220,7 +220,7 @@
                         <outlet property="enemynameLabel" destination="Cyp-bR-Ds1" id="xuF-aZ-CJb"/>
                         <outlet property="playerHPBar" destination="g2D-rF-g21" id="h5k-O1-dUC"/>
                         <outlet property="playerImageView" destination="Vki-H3-1Q8" id="4Z0-CE-5JO"/>
-                        <outlet property="playerTP" destination="wlQ-jr-x4d" id="hbo-z0-fxN"/>
+                        <outlet property="playerTPLabel" destination="wlQ-jr-x4d" id="30v-4E-0g0"/>
                         <outlet property="playernameLabel" destination="KAt-lQ-DLN" id="0Qu-f7-9rW"/>
                     </connections>
                 </viewController>
